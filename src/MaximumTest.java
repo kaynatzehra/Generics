@@ -1,34 +1,22 @@
-public class MaximumTest <T extends Comparable <T>> {
-    T x, y, z;
-
-    public MaximumTest(T x, T y, T z) {
-        this.x = x;
-        this.y = y;
-        this.z = z;
-    }
-
-    public void printMax(){
-        MaximumTest.printMax(x, y, z);
-
-    }
-    private static <T extends Comparable<T>> void printMax(T x, T y, T z) {
-        if (x.compareTo(y) > 0 && x.compareTo(z) > 0) {
-            System.out.println(x);
-        } else if (y.compareTo(x) > 0 && y.compareTo(z) > 0) {
-            System.out.println(y);
-        } else {
-            System.out.println(z);
-        }
-    }
+public class MaximumTest {
 
     public static void main(String[] args) {
-       Integer xInt  = 3, yInt =4, zInt =5;
-       Float xFl = 3.3f, yFl = 4.4f, zFl =5.5f;
-       String xStr = "Good", yStr = "Better", zStr = "Best";
+        Integer Int1 = 10 , Int2 = 12, Int3 = 7;
+        Float float1 = 2.7f , float2 = 19.3f, float3 = 7.5f;
+        String xString = "Cherry" , yString = "Banana", zString = "Pineapple";
 
-        new MaximumTest(xInt, yInt, zInt).printMax();
-        new MaximumTest(xFl, yFl, zFl).printMax();
-        new MaximumTest(xStr, yStr, zStr).printMax();
+        Operation operation = new Operation(Int1,Int2,Int3);
+        int intMax=operation.testMaximum(Int1,Int2,Int3);
+        operation.printMax(Int1, Int2, Int3,intMax);
+
+        Operation operation1 = new Operation(float1,float2,float3);
+        Float floatMax =operation1.testMaximum(float1,float2,float3);
+        operation.printMax(float1, float2, float3,floatMax);
+
+
+        Operation operation2 = new Operation(xString,yString,zString);
+        String stringMax =operation2.testMaximum(xString,yString,zString);
+        operation.printMax(xString, yString, zString,stringMax);
 
     }
 }
